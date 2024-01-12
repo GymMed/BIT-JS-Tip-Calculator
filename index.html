@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Service Tipper</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <main>
+            <section class="m-5 p-5 flex items-center justify-center">
+                <div
+                    class="tipper w-96 bg-orange-100 rounded p-5 border-orange-700 border-2 flex flex-col gap-3"
+                >
+                    <div
+                        class="header flex justify-center items-center text-2xl font-semibold text-orange-600"
+                    >
+                        Tip calculator
+                    </div>
+                    <div class="bill flex justify-between items-center">
+                        <label for="bill" class="font-bold w-full">Bill</label>
+                        <input
+                            type="text"
+                            id="bill"
+                            name="bill"
+                            value=""
+                            class="w-full p-2 border-2 rounded-md text-orange-500 focus:ring placeholder-orange-500 focus:ring-offset-white focus:ring-orange-500 focus:ring-offset-2"
+                        />
+                    </div>
+                    <div
+                        class="service-rating flex justify-between items-center"
+                    >
+                        <label for="serviceRating" class="font-bold w-full"
+                            >Rate service</label
+                        >
+                        <select
+                            name="serviceRating"
+                            id="serviceRating"
+                            class="w-full p-2 border-2 rounded-md text-orange-500 focus:ring placeholder-orange-500 focus:ring-offset-white focus:ring-orange-500 focus:ring-offset-2"
+                        ></select>
+                    </div>
+                    <div class="calculate-btn-wrapper">
+                        <button
+                            type="button"
+                            class="w-full bg-gradient-to-br from-orange-500 to-orange-700 hover:from-orange-700 hover:to-orange-900 text-white font-semibold rounded focus:ring focus:ring-offset-white focus:ring-orange-500 focus:ring-offset-2"
+                            onclick="totalCalculation();"
+                        >
+                            <div class="hover:scale-110 px-4 py-1">
+                                Calculate
+                            </div>
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="p-2 bg-gray-50 rounded text-black">
+                            Tip: $ <span id="tipAmount">0.00</span>
+                        </div>
+                        <div class="p-2 bg-gray-50 rounded text-red-500">
+                            Total: $ <span id="totalCost">0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="assets/js/tipCalculator.js"></script>
+    </body>
+</html>
